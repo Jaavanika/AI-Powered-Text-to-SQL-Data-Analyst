@@ -6,7 +6,8 @@
 > [docs/api_documentation.md](docs/api_documentation.md), the stage-by-stage record in
 > [docs/implementation_plan.md](docs/implementation_plan.md), and the measured answer quality in
 > [docs/evaluation_report.md](docs/evaluation_report.md). Database support today is **SQLite (uploads and the sample)
-> and PostgreSQL**; MySQL is not available yet.
+> and PostgreSQL**. MySQL is not supported in this version; see "Extending" in
+> [docs/architecture.md](docs/architecture.md) for how a new database is added.
 
 ## 1. Project Overview
 
@@ -14,7 +15,7 @@ The **AI-Powered Text-to-SQL Data Analyst** is an AI-assisted analytics platform
 
 Users can provide data in two primary ways:
 
-1. **Connect an existing database** such as PostgreSQL or MySQL.
+1. **Connect an existing database** such as PostgreSQL (MySQL is not supported in this version).
 2. **Upload a dataset** such as CSV or Excel, which the application imports into a database for analysis.
 
 After data is made available, users can ask questions such as:
@@ -78,7 +79,7 @@ Users can connect an existing database instead of manually uploading individual 
 
 **Initial supported database systems:**
 - PostgreSQL
-- MySQL
+- MySQL (not supported in this version)
 
 **Connection fields:**
 - Database type
@@ -574,7 +575,7 @@ The agent coordinates tools and services; it does not replace SQL validation or 
 | Backend | Python |
 | API framework | FastAPI |
 | LLM | OpenAI API or another compatible LLM |
-| Databases | PostgreSQL / MySQL |
+| Databases | PostgreSQL (MySQL not supported in this version) |
 | Database connectivity | SQLAlchemy |
 | Schema inspection | SQLAlchemy Inspector / database metadata |
 | SQL parsing and validation | SQLGlot |
