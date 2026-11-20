@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# An embedded PostgreSQL server (no installation or admin rights needed). The PostgreSQL tests and
+# scripts/dev_postgres.py use it; without it those tests are skipped. Set TEST_POSTGRES_URL to test
+# against your own server instead.
+pixeltable-pgserver>=0.7
